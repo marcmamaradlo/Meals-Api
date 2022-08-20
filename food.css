@@ -1,0 +1,309 @@
+html,
+body {
+    background-color: #1b1610;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+hr {
+    color: goldenrod;
+}
+
+p {
+    color: white;
+}
+
+input {
+    height: 2.5rem;
+    padding: 10px;
+    text-align: center;
+    color: goldenrod;
+    border-radius: 5px;
+}
+
+a:focus {
+    color: goldenrod;
+}
+
+
+
+.active {
+    color: goldenrod;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation h1, h2 {
+    font-family: 'Anton', italic;
+}
+
+.navigation h2 {
+    font-size: 1.4rem;
+}
+
+.navigation a {
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.navigation div {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation div button {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.navigation button {
+    background-color: goldenrod;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+    padding: 0.5rem;
+    margin-top: 5rem;
+}
+
+.icon-container i {
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+.icon-container i:hover {
+    color: goldenrod;
+    transition: 500ms;
+}
+
+.icon-container p {
+    text-align: center;
+}
+
+.header-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.header-main h1 {
+    font-family: 'Dancing Script', cursive;
+    color: goldenrod;
+    font-size: 4rem;
+    text-shadow: 5px 6px 10px black;
+}
+
+.header-main h2, h3 {
+    font-family: 'Anton';
+    color: white;
+}
+
+.header-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-button-container button {
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 10rem;
+    background-color: goldenrod;
+    font-family: 'Anton', sans-serif;
+    border: 1px solid goldenrod;
+    margin: 0px 5px;
+}
+
+.header-button-container button:hover {
+    background: #1b1610;
+    color: goldenrod;
+}
+
+.append-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 5rem 15%;
+    padding: 1rem;
+}
+
+.append-container-meals {
+    width: 30%;
+    background-color: rgba(218, 165, 32, 0.158);
+    margin: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.append-container-meals img {
+    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+}
+
+.append-container-meals-title h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    color: goldenrod;
+    text-shadow: 6px 1px 10px #1d1c1a;
+}
+
+.append-container-meals-title h2 {
+    color: goldenrod;
+    font-size: 1rem;
+    padding-left: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.500);
+}
+
+.append-container-meals-title p {
+    color: goldenrod;
+    font-size: 1rem;
+    padding-left: 2rem;
+}
+
+.append-container-meals-title a {
+    text-align: end;
+    padding-right: 2rem;
+    color: goldenrod;
+}
+
+.form-outline {
+    border: 1px solid goldenrod;
+    width: 100%;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.material-symbols-outlined {
+    color: goldenrod;
+    font-size: 4rem;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link-gold {
+    color: goldenrod
+}
+
+.nav-link:hover {
+    color: goldenrod;
+    font-weight: 400;
+}
+
+.offcanvas-body {
+    background-color: #14110e;
+    color: goldenrod;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(218, 165, 32, 0.158);
+    color: goldenrod;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-top {
+    padding: 1rem;
+}
+
+.footer-top h4 {
+    text-align: center;
+    font-family: 'Anton', Italic;
+}
+
+.footer-top p {
+    padding: 1rem 15%;
+}
+
+.footer-top a {
+    text-align: center;
+    text-decoration: none;
+    background-color: #1b1610;
+    color: white;
+    padding: 10px 5rem;
+    border-radius: 25px;
+}
+
+.footer-bottom i {
+    font-size: 2rem;
+    margin: 0 1rem;
+}
+
+
+@media only screen and (max-width: 820px) {
+    .append-container-meals {
+        width: auto;
+        margin: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 576px) {
+
+    .header-main-container h1 {
+            font-size: 2.7rem;
+            margin: 1rem 0;
+        }
+
+    .header-main-container h2 {
+        font-size: 2.7rem;
+    }
+
+    .header-main-container h3 {
+        font-size: 2.7rem;
+    }
+
+    .header-button-container {
+        margin: 2rem 0;
+    }
+
+    .append-container {
+        margin: 5rem 0;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .append-container-meals {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+        .footer-top p {
+            padding: 0.5rem;
+        }
+
+}
