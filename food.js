@@ -24,7 +24,7 @@ const appendContainer = document.querySelector('#append-container');
 nameLeft.addEventListener('click', () => {
     console.log('nameLeft CLICKED!');
     nameLeft.classList.toggle('active');
-    nameLeftSearch.classList.toggle('d-flex');
+    nameLeftSearch.classList.toggle('d-none');
     initNameDiv(nameLeftInput, nameLeftButton);
 
 });
@@ -39,14 +39,8 @@ nameLeftButton.addEventListener('click', (e) => {
 categoryLeft.addEventListener('click', () => {
     console.log('categoryLeft CLICKED!');
     categoryLeft.classList.toggle('active');
-    categoryLeftSearch.classList.toggle('d-flex');
-    initCategoryDiv(categoryLeftInput, categoryLeftButton);
-});
-
-categoryLeftButton.addEventListener('click', () => {
-    appendContainer.innerHTML = '';
     searchByCategory();
-})
+});
 
 ingredientsLeft.addEventListener('click', () => {
     console.log('ingredientsLeft CLICKED!');
@@ -94,6 +88,14 @@ function initIngredientDiv(ingredientsLeftInput, ingredientsLeftButton) {
         console.log(e.target);
     });
 }
+
+nameLeftInput.addEventListener('click', () => {
+    nameLeftInput.value = '';
+});
+
+ingredientsLeftInput.addEventListener('click', () => {
+    ingredientsLeftInput.value = '';
+});
 
 function searchByName(inputValue) {
     const searchTerm = inputValue;
