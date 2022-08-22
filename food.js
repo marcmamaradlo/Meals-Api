@@ -1,4 +1,4 @@
-// LEFT NAVIGATION //
+
 const homeLeft = document.querySelector('#home-left');
 const aboutLeft = document.querySelector('#about-left');
 
@@ -22,7 +22,6 @@ const randomLeft = document.querySelector('#random-left');
 const appendContainer = document.querySelector('#append-container');
 
 nameLeft.addEventListener('click', () => {
-    console.log('nameLeft CLICKED!');
     nameLeft.classList.toggle('active');
     nameLeftSearch.classList.toggle('d-none');
     initNameDiv(nameLeftInput, nameLeftButton);
@@ -37,15 +36,13 @@ nameLeftButton.addEventListener('click', (e) => {
 });
 
 categoryLeft.addEventListener('click', () => {
-    console.log('categoryLeft CLICKED!');
     categoryLeft.classList.toggle('active');
     searchByCategory();
 });
 
 ingredientsLeft.addEventListener('click', () => {
-    console.log('ingredientsLeft CLICKED!');
     ingredientsLeft.classList.toggle('active');
-    ingredientsLeftSearch.classList.toggle('d-flex');
+    ingredientsLeftSearch.classList.toggle('d-none');
     initIngredientDiv(ingredientsLeftInput, ingredientsLeftButton);
 });
 
@@ -55,13 +52,11 @@ ingredientsLeftButton.addEventListener('click', () => {
 });
 
 randomLeft.addEventListener('click', () => {
-    console.log('randomLeft CLICKED!');
     searchByRandom();
 });
 
 function initNameDiv(nameLeftInput, nameLeftButton) {
     nameLeftInput.addEventListener('click', (e) => {
-        console.log(e.target);
         nameLeftInput.value = '';
     });
     nameLeftButton.addEventListener('click', (e) => {
@@ -102,7 +97,6 @@ function searchByName(inputValue) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             let html = '';
             if (data.meals) {
                 data.meals.forEach(meal => {
@@ -137,7 +131,6 @@ function searchByCategory() {
     fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             let html = '';
             if (data.categories) {
                 data.categories.forEach(categories => {
@@ -170,7 +163,6 @@ function searchByIngredients() {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchTerm}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             let html = '';
             if (data.meals) {
                 data.meals.forEach(meal => {
@@ -202,7 +194,6 @@ function searchByRandom() {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             let html = '';
             if (data.meals) {
                 data.meals.forEach(meal => {
@@ -231,101 +222,40 @@ function searchByRandom() {
             }
         });
 }
-//--
 
-//TOP NAVIGATION //
-const homeTop = document.querySelector('#home-top');
-const aboutTop = document.querySelector('#about-top');
+const sampleSearch = () => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=carbonara`)
+        .then(response => response.json())
+        .then(data => {
+            let html = '';
+            if (data.meals) {
+                data.meals.forEach(meal => {
+                    html += `
 
-const nameTop = document.querySelector('#name-top');
-const nameTopInput = document.querySelector('#name-top-input');
-const nameTopButton = document.querySelector('#name-top-button');
-const nameTopSearch = document.querySelector('#name-top-search');
-
-const categoryTop = document.querySelector('#category-top');
-const categoryTopInput = document.querySelector('#category-top-input');
-const categoryTopButton = document.querySelector('#category-top-button');
-const categoryTopSearch = document.querySelector('#category-top-search');
-
-const ingredientsTop = document.querySelector('#ingredients-top');
-const ingredientsTopInput = document.querySelector('#ingredients-top-input');
-const ingredientsTopButton = document.querySelector('#ingredients-top-button');
-const ingredientsTopSearch = document.querySelector('#ingredients-top-search');
-
-const randomTop = document.querySelector('#random-top');
-
-nameTop.addEventListener('click', () => {
-    console.log('nameTop CLICKED!');
-    nameTop.classList.toggle('active');
-    nameTopSearch.classList.toggle('d-flex');
-    initNameDivTop(nameTopInput, nameTopButton);
-
-});
-
-nameTopButton.addEventListener('click', (e) => {
-    appendContainer.innerHTML = '';
-    const parent = e.target.parentNode;
-    const inputElement = parent.querySelector('input');
-    searchByName(inputElement.value);
-});
-
-categoryTop.addEventListener('click', () => {
-    console.log('categoryTop CLICKED!');
-    categoryTop.classList.toggle('active');
-    categoryTopSearch.classList.toggle('d-flex');
-    initCategoryDivTop(categoryTopInput, categoryTopButton);
-});
-
-categoryTopButton.addEventListener('click', () => {
-    appendContainer.innerHTML = '';
-    searchByCategory();
-})
-
-ingredientsTop.addEventListener('click', () => {
-    console.log('ingredientsTop CLICKED!');
-    ingredientsTop.classList.toggle('active');
-    ingredientsTopSearch.classList.toggle('d-flex');
-    initIngredientDivTop(ingredientsTopInput, ingredientsTopButton);
-});
-
-ingredientsTopButton.addEventListener('click', () => {
-    appendContainer.innerHTML = '';
-    searchByIngredients();
-});
-
-randomTop.addEventListener('click', () => {
-    console.log('randomLeft CLICKED!');
-    searchByRandom();
-});
-
-function initNameDivTop(nameTopInput, nameTopButton) {
-    nameTopInput.addEventListener('click', (e) => {
-        console.log(e.target);
-        nameTopInput.value = '';
-    });
-    nameTopButton.addEventListener('click', (e) => {
-        console.log(e.target);
-    });
+                    <div class="append-container-meals">
+                        <img src="${meal.strMealThumb}" />
+                        <div class="append-container-meals-title">
+                            <h1>${meal.strMeal}</h1>
+                            <h2>${meal.strCategory}</h2>
+                            <p>Description:</p>
+                            <p>Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Tenetur omnis voluptate aliquam recusandae natus eius..</p>
+                            <a class="nav-link" href="${meal.strYoutube}" >youtube.com/Link</a>
+                        </div>
+                    </div>
+                    <hr/>
+                        `
+                });
+                appendContainer.innerHTML = html;
+                window.scrollTo({
+                    top: 1000,
+                    left: 0,
+                    behavior: "smooth"
+                });
+            }
+        });
 }
 
-function initCategoryDivTop(categoryTopInput, categoryTopButton) {
-    categoryTopInput.addEventListener('click', (e) => {
-        console.log(e.target);
-        categoryTopInput.value = '';
-    });
-    categoryTopButton.addEventListener('click', (e) => {
-        console.log(e.target);
-    });
-}
+sampleSearch();
 
-function initIngredientDivTop(ingredientsTopInput, ingredientsTopButton) {
-    ingredientsTopInput.addEventListener('click', (e) => {
-        console.log(e.target);
-        ingredientsTopInput.value = '';
-    });
-    ingredientsTopButton.addEventListener('click', (e) => {
-        console.log(e.target);
-    });
-}
-
-//--
